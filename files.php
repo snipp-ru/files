@@ -3,7 +3,7 @@
 * Работа с файлами и директориями.
 * 
 * @author http://snipp.ru/
-* @version 1.0
+* @version 1.1
 */
 Class Files
 {
@@ -75,7 +75,11 @@ Class Files
 	 */
 	public static function safeFile($filename)
 	{
-		$dir = self::safeDir($filename);
+		$dir = dirname($filename);
+		if (!is_dir($dir)) {
+			mkdir($dir, 0777, true);
+		}
+
 		$info = pathinfo($filename);
 		$name = $dir . '/' . $info['filename']; 
 		$prefix = '';
