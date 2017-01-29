@@ -2,7 +2,7 @@
 Подробное описание функций на [Snipp.ru](http://snipp.ru/view/1).
 
 ### Конвертирование размера файла.
-'''PHP
+'''php
 convert_bytes($size);
 '''
 
